@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control del Brazo Robótico</title>
+    <link rel="stylesheet" href="estilo.css">
+    <!-- Enlace a Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Enlace a Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Contenido de la página -->
+    <div id="accessibility-menu">
+        <button id="accessibility-toggle"><i class="fas fa-universal-access"></i></button>
+        <div class="accessibility-options">
+            <button id="increase-font">Zoom +</button>
+            <button id="decrease-font">Zoom -</button>
+            <button id="toggle-contrast">Contraste</button>
+            <button id="toggle-grayscale">Escala de grises</button>
+            <button id="highlight-links">Resaltar enlaces</button>
+            <button id="read-page">Leer página</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="left-panel">
+            <h1>Camara</h1>
+            <img id="video" width="640" height="480" alt="Stream de la cámara ESP32">
+            <div>
+                <button id="Iniciar"> Iniciar Camera </button>
+                <button id="Detener"> Detener Camera </button>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <h1>Control de Brazo Robótico</h1>
+            <button id="connect"> Conectar Bluetooth </button>
+
+            <div>
+                <h2><label for="pinza">Pinza: </label></h2>
+                <span id="pinza-value">0</span>
+                <input type="range" id="pinza" min="0" max="180" value="0">
+                <button id="pinza-send">Enviar</button>
+            </div>
+
+            <div>
+                <h2> <label for="antebrazo">Antebrazo: </label></h2>
+                <span id="antebrazo-value">0</span>
+                <input type="range" id="antebrazo" min="0" max="180" value="0">
+                <button id="antebrazo-send">Enviar</button>
+            </div>
+
+            <div>
+                <h2><label for="brazo">Brazo: </label></h2>
+                <span id="brazo-value">0</span>
+                <input type="range" id="brazo" min="0" max="180" value="0">
+                <button id="brazo-send">Enviar</button>
+            </div>
+
+            <div>
+                <h2><label for="base">Base: </label></h2>
+                <span id="base-value">0</span>
+                <input type="range" id="base" min="0" max="180" value="0">
+                <button id="base-send">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="data-section">
+        <h2>Datos del Brazo Robótico</h2>
+        <div class="data-container">
+            <div class="table-container">
+                <table id="data-table">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Cantidad</th>
+                            <th>Peso (kg)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Los datos se llenarán dinámicamente con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="chart-container">
+                <canvas id="data-chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <button id="theme-toggle" class="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <script src="java.js"></script>
+</body>
+</html>

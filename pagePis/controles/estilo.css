@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+}
+
+body {
+    background-color: #1e2326;
+    color: #fff;
+    padding: 20px;
+}
+
+/* Estilos para modo claro */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.light-mode .left-panel,
+body.light-mode .right-panel,
+body.light-mode .data-section {
+    background-color: #f0f0f0;
+    color: #000000;
+    border-color: #1CB698;
+}
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode .data-section h2 {
+    color: #1CB698;
+}
+
+body.light-mode button {
+    background-color: #1CB698;
+    border: 1px solid #1CB698;
+    color: white;
+}
+
+body.light-mode button:hover {
+    background-color: #148f75;
+}
+
+body.light-mode #data-table th,
+body.light-mode #data-table td {
+    border-color: #1CB698;
+    color: #000000;
+}
+
+/* Estilos generales */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.left-panel, .right-panel {
+    background-color: #333;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    flex: 1;
+    text-align: center;
+    border: 1px solid #1CB698;
+}
+
+.left-panel h1, .right-panel h1 {
+    font-family: 'Righteous', cursive;
+    color: #1CB698;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #1CB698;
+    border: 1px solid #1CB698;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #148f75;
+}
+
+.left-panel button, .right-panel button {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.right-panel div {
+    margin-bottom: 20px;
+}
+
+.right-panel div h2 {
+    font-size: 24px;
+    font-family: 'Righteous', cursive;
+    color: #1CB698;
+    margin-bottom: 10px;
+}
+
+/* Estilos para los sliders */
+input[type="range"] {
+    width: 100%;
+    margin-bottom: 10px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 5px;
+}
+
+input[type="range"]:hover {
+    opacity: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #1CB698;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #1CB698;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+/* Estilos para el botón de cambio de tema */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    z-index: 1001;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+body.light-mode .theme-toggle {
+    color: #000;
+    background-color: rgba(255,255,255,0.5);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-panel, .right-panel {
+        width: 100%;
+    }
+}
+
+#accessibility-menu {
+    position: fixed;
+    left: 0;
+    top: 50vh;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+#accessibility-toggle {
+    background-color: #1CB698;
+    border: 1px solid #1CB698;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+}
+
+#accessibility-toggle i {
+    font-size: 24px;
+    color: white;
+}
+
+.accessibility-options {
+    display: none;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+}
+
+#accessibility-menu:hover .accessibility-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.accessibility-options button {
+    margin: 5px 0;
+    padding: 5px 10px;
+    background-color: #1CB698;
+    color: white;
+    border: 1px solid #1CB698;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* Estilos para el modo de alto contraste */
+body.high-contrast {
+    background-color: black !important;
+    color: yellow !important;
+}
+
+body.high-contrast * {
+    background-color: black !important;
+    color: yellow !important;
+    border-color: yellow !important;
+}
+
+/* Estilos para los sliders en modo de alto contraste */
+body.high-contrast input[type="range"] {
+    background: yellow !important;
+}
+
+body.high-contrast input[type="range"]::-webkit-slider-thumb {
+    background: yellow !important;
+}
+
+body.high-contrast input[type="range"]::-moz-range-thumb {
+    background: yellow !important;
+}
+
+/* Estilos para el modo de escala de grises */
+body.grayscale {
+    filter: grayscale(100%);
+}
+
+/* Estilos para resaltar enlaces */
+body.highlight-links a {
+    background-color: yellow !important;
+    color: black !important;
+}
+
+/*Estilos para grafico*/
+.data-section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 10px;
+    border: 1px solid #1CB698;
+}
+
+.data-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.table-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.chart-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 35.25%; /* Proporción 141:400 */
+    position: relative;
+}
+
+#data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#data-table th, #data-table td {
+    border: 1px solid #1CB698;
+    padding: 10px;
+    text-align: center;
+}
+
+#data-chart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .table-container {
+        width: 30%;
+    }
+    
+    .chart-container {
+        width: 65%;
+    }
+}
+
+body.light-mode .data-section {
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+body.light-mode #data-table th,
+body.light-mode #data-table td {
+    color: #000000;
+}
+
+body.light-mode #data-chart {
+    background-color: #f0f0f0;
+}
+
+/* Estilos adicionales para modo claro */
+body.light-mode .accessibility-options {
+    background-color: #f0f0f0;
+}
+
+body.light-mode .accessibility-options button {
+    background-color: #1CB698;
+    color: white;
+}
+
+body.light-mode #accessibility-toggle {
+    background-color: #1CB698;
+}
+
+body.light-mode #accessibility-toggle i {
+    color: white;
+}
+
+/* Estilos para asegurar la visibilidad del texto en modo claro */
+body.light-mode .data-section {
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+body.light-mode #data-table th,
+body.light-mode #data-table td {
+    color: #000000;
+}
+
+/* Ajustes para el gráfico en modo claro */
+body.light-mode #data-chart {
+    background-color: #f0f0f0;
+}
